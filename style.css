@@ -1,0 +1,610 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Playfair Display', serif;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* **********nav bar*********** */
+
+nav{   
+    display: flex;
+    background-color: #6B48C3;
+    height: 130px;
+    align-items: center;
+    position: relative;
+    justify-content: space-between;
+    max-width: 100vw;
+}
+
+
+nav ul{
+    border: 1px solid black;
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+    width: 50%;
+    border-radius: 20px;
+    margin: 20px auto;
+    background-color: white;
+    height: 50%;
+    align-items: center;
+    font-size: 21px;
+    
+}
+nav ul li{
+    padding: 16px;
+    max-width: 20%;
+    font-weight: bold; 
+}
+nav ul li a{
+    text-decoration: none;
+    color: black;
+}
+nav ul li a:hover{
+    color: rgb(65, 60, 60);
+    text-decoration: underline;
+}
+
+#burger{
+    width: 35px;
+    height: 35px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid white;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 23px;
+    margin-right: 20px;
+    background-color: white;
+}
+#fermer{
+    position: absolute;
+    top: 50px;
+    left: 10px;
+    font-size: 2rem;
+    cursor: pointer;
+    display: none;
+}
+
+/* ****intro***** */
+
+.container{
+    background-color: #6B48C3;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 70vh;
+}
+.container img{
+    width: 500px;
+    border-radius: 50%;
+    height: 450px;
+}
+
+.intro{
+    font-size: 50px;
+    width: 30%;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.intro p{
+    margin-bottom: 50px;
+}
+.intro span{
+    border: 1px solid black;
+    font-size: 25px;
+    text-align: center;
+    width: 50%;
+    border-radius: 50px;
+    background-color: white;
+    padding: 25px;
+    transition: transform 0.3s ease;
+}
+.intro span:hover{
+    transform: scale(1.1);
+    
+}
+.intro span a{
+    text-decoration: none;
+    color: #6B48C3;
+    font-weight: bold;
+}
+
+
+
+/* ****Section 1**** */
+
+
+
+#myGame{
+    display: flex;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    flex-direction: column;
+    background-color: #F3F3F3;
+    border-radius: 0 0 6vw 0;
+}
+
+
+.why{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 80px;
+}
+.why h1{
+    font-size: 50px;
+    margin-bottom: 50px;
+    border: 1px solid black;
+    text-align: center;
+    border-radius: 50px;
+    padding: 25px;
+    background-color: #6B48C3;
+    color: white;
+}
+.why h2{
+    margin-bottom: 20px;
+    font-size: 35px;
+}
+.why p{
+    width: 30%;
+    text-align: center;
+    line-height: 1.3;
+    font-size: 20px;
+}
+
+.teso-container{
+    display: flex;
+    justify-content: space-around;
+}
+.teso-container img{
+    width: 700px;
+    height: 500px;
+    border-radius: 20px;
+}
+
+.teso-container .about-teso{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.3;
+}
+.teso-container .about-teso h4{
+    margin-top: 20px;
+}
+
+.teso-container .about-teso p{
+    width: 70%;
+}
+
+/* *** section 2 **** */
+
+
+.carrousel{
+    margin: 150px auto 0px;
+    max-width: 1200px;
+    width: 75vw;
+    max-height: calc(1200px*9/16);
+    height: calc(75vw *9/16);
+    border: 15px solid white;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+.carrousel h3{
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 20px;
+}
+.carrousel .reglette{
+    display: flex;
+    height: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+    justify-content: start;
+    align-items: center;
+}
+
+.carrousel .reglette figure{
+    height: 100%;
+    position: relative;
+}
+.carrousel .reglette figure img{
+    width: 100%;
+    height: 100%;
+}
+
+
+.carrousel .previous, .carrousel .next{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 1.5rem;
+    background: rgba(255, 255, 255, .5);
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3px;
+    border-radius: 50%;
+}
+
+.carrousel .previous{
+    left: 10px;
+}
+.carrousel .next{
+    right: 10px;
+}
+
+.carrousel .reglette.animavance{
+    animation: avance 1s ease-in-out forwards;
+    animation-iteration-count: 1;
+}
+.carrousel .reglette.animrecule{
+    animation: recule 1s ease-in-out forwards;
+    animation-iteration-count: 1;
+}
+@keyframes avance {
+
+    0%{
+        left: 0;
+    }
+    100%{
+        left: -100%;
+    }
+}
+
+@keyframes recule {
+
+    0%{
+        left: -100%;
+    }
+    100%{
+        left: 0;
+    }
+}
+
+.editeurs{
+    display: flex;
+    justify-content: space-around;
+    width: 70%;
+    margin: 50px auto;
+}
+.editeurs img{
+    width: 200px;
+    height: 130px;
+}
+
+/* *** section 3 *** */
+
+
+#about{
+    padding-top: 100px;
+    background-color: #F3F3F3;
+    border-radius: 0vw 6vw 0 6vw;
+    padding-bottom: 50px;
+}
+#about h3{
+    display: flex;
+    justify-content: center;
+    font-size: 35px;
+    margin-bottom: 50px;
+}
+
+.about-container{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.card{
+    width: 40%;
+    margin-top: 20px;
+}
+.card img{
+    width: 170px;
+    height: 130px;
+}
+.card h4{
+    margin: 10px 0;
+}
+.card p{
+    line-height: 1.3;
+}
+
+.first-about,.second-about{
+    display: flex;
+    justify-content: space-around;
+}
+
+
+/* *** section 4 *** */
+
+#esport{
+    transform: rotate(-3deg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    margin: 50px auto 0;
+    justify-content: center;
+}
+#esport h3{
+    display: flex;
+    justify-content: center;
+    font-size: 55px;
+    width: 20%;
+    text-align: center;
+    margin: 0 auto 50px;
+    font-weight: 900;
+    font-style: italic;
+}
+#esport p{
+    width: 50%;
+    display: flex;
+    font-size: 30px;
+    text-align: center;
+    background-color: #6B48C3;
+    color: white;
+    font-weight: 400;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+
+/* *** section 5 *** */
+
+#contact{
+    background-color: #F3F3F3;
+    border-radius: 6vw 0vw 0 0vw;
+}
+.contact-main{
+    margin: 100px auto 0;
+    display: flex;
+    width: 60%;
+    justify-content: space-around;
+    align-items: center;
+}
+.contact-us{
+    font-size: 55px;
+    text-align: center;
+}
+
+.ok{
+    color: green;
+}
+
+.error{
+    color: red;
+}
+
+#mdp{
+    padding-right: 30px;
+}
+#oeil{
+    position: relative;
+    left: -27px;
+    top: 1px;
+    z-index: 99;
+}
+
+label{
+    display: block;
+}
+input+label{
+    display: inline;
+}
+input:checked+label{
+    font-weight: bold;
+}
+form div{
+    margin: 10px 0;
+}
+
+/* *** footer *** */
+
+footer{
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+    background-color: #F3F3F3;
+}
+
+
+/* ** responsive ** */
+
+@media screen and (max-width:1250px){
+    nav ul{
+        width: 70%;
+    }
+    .intro p{
+        font-size: 35px;
+    }
+    .intro span{
+        width: 40%;
+        font-size: 20px;
+    }
+    .container img{
+        width: 300px;
+        height: 300px;
+    }
+    .teso-container{
+        flex-direction: column;
+        align-items: center;
+    }
+    .teso-container .about-teso{
+        width: 80%;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    .contact-main span{
+        margin-right: 50px;
+    }
+}
+
+
+@media screen and (max-width:860px){
+    #burger{
+        display: flex;
+    }
+    #fermer{
+        display: block;
+    }
+    #menu{
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: white;
+        width: 100%;
+        flex-direction: column;
+        height: 30vh;
+        z-index: 99;
+        transform: translateX(-100%);
+        margin-top: 0;
+    }
+    #menu li{
+        text-align: center;
+        padding: 0;
+    }
+    #menu.deploye{
+        transform: translateX(0);
+    }
+    #menu.transition{
+        transition: 1s;
+    }
+    .intro p{
+    font-size: 25px;
+    }
+    .intro span{
+        width: 50%;
+        height: 50px;
+        font-size: 15px;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .why p{
+        width: 70%;
+    }
+    .container{
+        height: 30vh;
+    }
+    .container img{
+        width: 200px;
+        height: 200px;
+    }
+    .teso-container .about-teso{
+        width: 100%;
+    }
+    .first-about,.second-about{
+        flex-direction: column;
+        align-items: center;
+    }
+    .teso-container img{
+        width: 350px;
+        height: 300px;
+    }
+    .card{
+        width: 80%;
+    }
+    #esport h3{
+        width: 60%;
+    }
+    #esport p{
+        width: 65%;
+        font-size: 25px;
+    }
+    .contact-us{
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width:650px){
+    .intro p{
+        margin-bottom: 10px;
+        font-size: 18px;
+    }
+    .intro span{
+        font-size: 12px;
+    }
+    .container img{
+        width: 150px;
+        height: 150px;
+    }
+    .carrousel{
+        margin-top: 50px;
+        border: 5px solid white;
+    }
+    .carrousel h3{
+        display: none;
+    }
+    .editeurs img{
+        width: 150px;
+        height: 120px;
+    }
+    #esport p{
+        width: 90%;
+        font-size: 20px;
+    }
+    .contact-main{
+        flex-direction: column;
+    }
+    .contact-main span{
+        width: 80%;
+    }
+}
+
+@media screen and (max-width:450px){
+    .intro p{
+        font-size: 15px;
+    }
+    .intro span{
+        width: 70%;
+        height: 30px;
+    }
+    .why h1{
+        font-size: 27px;
+    }
+    .why h2{
+        text-align: center;
+    }
+    .teso-container img{
+        width: 200px;
+        height: 150px;
+    }
+    .editeurs img{
+        width: 100px;
+        height: 70px;
+    }
+    #about h3{
+        text-align: center;
+    }
+    #esport h3{
+        width: 90%;
+        font-size: 30px;
+    }
+    #esport p{
+        font-size: 15px;
+    }
+    .contact-main{
+        justify-content: flex-start;
+        margin-left: 10px;
+    }
+    form{
+        width: 50vw;
+    }
+    #object{
+        width: 100%;
+    }
+}
